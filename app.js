@@ -17,8 +17,10 @@
 .catch(e => requestError(e, 'image'));
 fetch(`http://api.nytimes.com/svc/search/v2/articlesearch.json?q=${searchedForText}&api-key=ZrUKTCwLkbzEfhqzH4awjS8o8k7PvIGs`)
 .then(response=> response.json()).then(addArticles).catch(e=>requestError(e,'articles'))
+.then(response=> response.json()).then(addArticles).catch(e=>requestError(e,'books'))
     
     });
+
     function addImage(data) {
         let htmlContent = '';
         const firstImage = data.results;
